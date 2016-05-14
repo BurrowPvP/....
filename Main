@@ -1,0 +1,7 @@
+<?php
+
+namespace SuperJump;
+
+Class Main extends PluginBase implements Listener {
+
+}
