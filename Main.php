@@ -34,7 +34,7 @@ Class Main extends PluginBase implements Listener{
 	$b = $event->getBlock();
 	$name = $event->getPlayer()->getName();
 	$name = strtolower($name);
-	if($b->getID() == 63 || $b->getID() == 68){ 
+	if($b->getId() == 63 || $b->getId() == 68 || $b->getId() == 323){ 
 	    $sign = $player->getLevel()->getTile($b);
 	    if(!($sign instanceof Sign)){
 		return;
