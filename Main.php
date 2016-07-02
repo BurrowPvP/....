@@ -1,6 +1,6 @@
 <?php
 
-namespace Secret;
+namespace SuperJump;
 
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
@@ -17,7 +17,7 @@ use pocketmine\scheduler\PluginTask;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\Server;
 use pocketmine\block\Block;
-use pocketmine\scheduler\scheduleDelayedRepeatingTask;
+use pocketmine\scheduler\scheduleRepeatingTask;
 use pocketmine\event\block\BlockBreakEvent;
 
 Class Main extends PluginBase implements Listener{
