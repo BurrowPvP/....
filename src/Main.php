@@ -1,5 +1,7 @@
 <?php
+
 namespace SuperJump;
+
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Player;
@@ -17,6 +19,7 @@ use pocketmine\Server;
 use pocketmine\block\Block;
 use pocketmine\scheduler\scheduleRepeatingTask;
 use pocketmine\event\block\BlockBreakEvent;
+
 Class Main extends PluginBase implements Listener{
     
     public $queue = array();
