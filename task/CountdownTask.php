@@ -15,7 +15,7 @@ namespace SuperJump\tasks;
 
 use pocketmine\scheduler\PluginTask;
 use Secret\Main;
-class CheckBlockUnderTask extends PluginTask{
+class CountdownTask extends PluginTask{
   /** @var Main */
   private $plugin;
   
