@@ -12,6 +12,7 @@
 limitations under the License.
 */
 namespace SuperJump\tasks;
+
 use pocketmine\scheduler\PluginTask;
 use Secret\Main;
 class CheckBlockUnderTask extends PluginTask{
@@ -24,10 +25,7 @@ class CheckBlockUnderTask extends PluginTask{
   }
   
   public function onRun($currentTick){
-    foreach($this->plugin->getServer()->getPlayer($this->plugin->players) as $player){
-       $block = $player->getLevel()->getBlock($player->floor()->subtract(0, 1));
-       if($block->getId() === 1){
-          // do something
+     // countdown
        }
     }
   }
