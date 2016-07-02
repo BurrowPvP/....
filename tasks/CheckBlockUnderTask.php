@@ -13,7 +13,7 @@
 limitations under the License.
 */
 
-namespace Secret\tasks;
+namespace SuperJump\tasks;
 
 use pocketmine\scheduler\PluginTask;
 use Secret\Main;
