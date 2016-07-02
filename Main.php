@@ -22,7 +22,7 @@ use pocketmine\event\block\BlockBreakEvent;
 
 Class Main extends PluginBase implements Listener{
     
-    private $queue = array();
+    public $queue = array();
     public $players = array();
     
     public function onEnable(){
