@@ -15,9 +15,12 @@ namespace SuperJump\tasks;
 
 use pocketmine\scheduler\PluginTask;
 use Secret\Main;
+
 class CountdownTask extends PluginTask{
   /** @var Main */
   private $plugin;
+  
+  public $seconds = 20;
   
   public function __construct(Main $plugin){
     parent::__construct($plugin);
