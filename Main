@@ -41,11 +41,11 @@ Class Main extends PluginBase implements Listener{
             }
 	    $sign = $sign->getText();
             if(TextFormat::clean($sign[0]) === 'SuperJump'){
-                if(in_array($event->getPlayer(), $this->queue)){
+                if(in_array($event->getPlayer()->getName(), $this->queue)){
                     $event->getPlayer()->sendMessage("Du bist bereits in der Warteschlange!");
                 }
                 else{
-                    array_push($this->queue, $event->getPlayer());
+                    array_push($this->queue, $event->getPlayer()->getName());
                     $event->getPlayer()->sendMessage("Du bist nun in der Warteschlange!");
                     $this->abfrage();
                 }
