@@ -75,5 +75,10 @@ Class Main extends PluginBase implements Listener{
                 break;
            }
            // countdown starten
+           //  foreach($this->getServer->getOnlinePlayers as $spieler){
+           //  $player1->hideplayer($spieler);
+           //  $player2->hideplayer($spieler);
+           //  $player1->showplayer($player2);
+           //  $player2->showplayer($player1);
     }
 }
