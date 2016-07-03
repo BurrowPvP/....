@@ -53,7 +53,8 @@ Class Main extends PluginBase implements Listener{
         }
     }
     public function abfrage(){
-        // ....
+        // 2 spieler in der warteschlange
+        $this->teleport(/* players */);
     }
     public function Teleport(/* array $players ? */){
     	switch(mt_rand(1, 5)){
