@@ -20,7 +20,8 @@ class CountdownTask extends PluginTask{
   /** @var Main */
   private $plugin;
   
-  public $seconds = 20;
+  
+  public $seconds = 5;
   
   public function __construct(Main $plugin){
     parent::__construct($plugin);
@@ -30,8 +31,9 @@ class CountdownTask extends PluginTask{
   public function onRun($currentTick){
      $this->seconds -= 1;
      foreach($this->plugin->getServer()->getPlayer($this->plugin->players) as $player){
-        if($this->seconds == 1){
-           // ...
+        if($this->seconds > 1){
+        }
+           else{
            ServerScheduler::cancelTask($this->getTaskId());
         }
      }
