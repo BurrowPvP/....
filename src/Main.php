@@ -52,10 +52,10 @@ Class Main extends PluginBase implements Listener{
             }
         }
     }
-    private function abfrage(){
+    public function abfrage(){
         // ....
     }
-    private function Teleport(/* array $players ? */){
+    public function Teleport(/* array $players ? */){
     	switch(mt_rand(1, 5)){
             case 1:
                 // map 1
