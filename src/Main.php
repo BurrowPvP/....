@@ -24,6 +24,7 @@ Class Main extends PluginBase implements Listener{
     
     public $queue = array();
     public $players = array();
+    public $TaskHandler;
     
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -53,13 +54,18 @@ Class Main extends PluginBase implements Listener{
         }
     }
     public function abfrage(){
-        // 2 spieler in der warteschlange
-        $this->teleport(/* players */);
+        if(count($this->queue == 2)){
+        	$player1 = $this->getServer()->getPlayer($this->queue[0]);
+        	$player2 = $this->getServer()->getPlayer($this->queue[1]);
+        	if($player1 instanceof Player){
+        		if($player2 instanceof Player){
+        			$this->teleport($player1, $player2);
     }
-    public function Teleport(/* array $players ? */){
+    public function Teleport(array /* ? */){
     	switch(mt_rand(1, 5)){
-            case 1:
-                // map 1
+            case 1: //map 1
+                $player1->teleport(new Vector3()); 
+                $player2->teleport(new Vector3());
                 break;
             case 2:
                 //map 2
@@ -74,11 +80,29 @@ Class Main extends PluginBase implements Listener{
                 //map 5
                 break;
            }
-           // countdown starten
+           $task = new CountdownTask($this, $this);
+           $this->TaskHandler = Server::getInstance()->getScheduler()->scheduleDelayedRepeatingTask($task, 20, 20);
            //  foreach($this->getServer->getOnlinePlayers as $spieler){
            //  $player1->hideplayer($spieler);
            //  $player2->hideplayer($spieler);
            //  $player1->showplayer($player2);
            //  $player2->showplayer($player1);
     }
+}
+class CountdownTask extends PluginTask{
+    public $seconds = 5;
+    
+    public function __construct(Plugin $owner) {
+     
+        parent::__construct($owner);
+    }
+    
+    public function onRun($currentTick) {
+    	$this->seconds -= 1;
+    	$player1->sendTip("Das Spiel beginnt in " . $this->seconds . "!");
+    	$player2->sendTip("Das Spiel beginnt in " . $this->seconds . "!");
+    	if($this->seconds == 0){
+    		// ...
+    		ServerScheduler::cancelTask($this->getTaskId());
+    	}
 }
