@@ -25,7 +25,11 @@ Class Main extends PluginBase implements Listener{
     public $queue = array();
     public $players = array();
     public $TaskHandler;
-    public $ingame = array();
+    public $ingame1 = array();
+    public $ingame2 = array();
+    public $ingame3 = array();
+    public $ingame4 = array();
+    public $ingame5 = array();
     
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -61,10 +65,31 @@ Class Main extends PluginBase implements Listener{
         	if($player1 instanceof Player){
         		if($player2 instanceof Player){
         			$this->teleport($player1, $player2);
-        			array_push($this->ingame, $player1->getName());
-        			array_push($this->ingame, $player2->getName());
         			unset($this->queue[0]);
         			unset($this->queue[1]);
+        			if(count($this->ingame1 =< 2)){
+        			        array_push($this->ingame1, $player1->getName());
+        			        array_push($this->ingame1, $player2->getName());
+        			}
+        			elseif(count($this->ingame2 =< 2)){
+        			        array_push($this->ingame2, $player1->getName());
+        			        array_push($this->ingame2, $player2->getName());				
+        		        }
+        			elseif(count($this->ingame3 =< 2)){
+        			        array_push($this->ingame3, $player1->getName());
+        			        array_push($this->ingame3, $player2->getName());
+        			}
+        			elseif(count($this->ingame4 =< 2)){
+        			        array_push($this->ingame4, $player1->getName());
+        			        array_push($this->ingame4, $player2->getName());
+        			}
+        			elseif(count($this->ingame5 =< 2)){
+        			        array_push($this->ingame5, $player1->getName());
+        			        array_push($this->ingame5, $player2->getName());
+        			}
+        		}
+        	}
+        }
     }
     public function Teleport(array /* ? */){
     	switch(mt_rand(1, 5)){
