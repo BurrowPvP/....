@@ -67,23 +67,23 @@ Class Main extends PluginBase implements Listener{
         			$this->teleport($player1, $player2);
         			unset($this->queue[0]);
         			unset($this->queue[1]);
-        			if(count($this->ingame1 =< 2)){
+        			if(count($this->ingame1 <= 2)){
         			        array_push($this->ingame1, $player1->getName());
         			        array_push($this->ingame1, $player2->getName());
         			}
-        			elseif(count($this->ingame2 =< 2)){
+        			elseif(count($this->ingame2 <= 2)){
         			        array_push($this->ingame2, $player1->getName());
         			        array_push($this->ingame2, $player2->getName());				
         		        }
-        			elseif(count($this->ingame3 =< 2)){
+        			elseif(count($this->ingame3 <= 2)){
         			        array_push($this->ingame3, $player1->getName());
         			        array_push($this->ingame3, $player2->getName());
         			}
-        			elseif(count($this->ingame4 =< 2)){
+        			elseif(count($this->ingame4 <= 2)){
         			        array_push($this->ingame4, $player1->getName());
         			        array_push($this->ingame4, $player2->getName());
         			}
-        			elseif(count($this->ingame5 =< 2)){
+        			elseif(count($this->ingame5 <= 2)){
         			        array_push($this->ingame5, $player1->getName());
         			        array_push($this->ingame5, $player2->getName());
         			}
