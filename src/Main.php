@@ -25,6 +25,7 @@ Class Main extends PluginBase implements Listener{
     public $queue = array();
     public $players = array();
     public $TaskHandler;
+    public $ingame = array();
     
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -60,6 +61,10 @@ Class Main extends PluginBase implements Listener{
         	if($player1 instanceof Player){
         		if($player2 instanceof Player){
         			$this->teleport($player1, $player2);
+        			array_push($this->ingame, $player1->getName());
+        			array_push($this->ingame, $player2->getName());
+        			unset($this->queue[0]);
+        			unset($this->queue[1]);
     }
     public function Teleport(array /* ? */){
     	switch(mt_rand(1, 5)){
